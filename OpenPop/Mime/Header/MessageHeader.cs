@@ -30,6 +30,8 @@ namespace OpenPop.Mime.Header
 		/// be parsed, feel free to notify the developers.
 		/// </remarks>
 		public NameValueCollection UnknownHeaders { get; private set; }
+		
+		public NameValueCollection AllHeaders { get; private set; }
 
 		/// <summary>
 		/// A human readable description of the body<br/>
@@ -251,6 +253,8 @@ namespace OpenPop.Mime.Header
 			References = new List<string>(0);
 			DispositionNotificationTo = new List<RfcMailAddress>();
 			UnknownHeaders = new NameValueCollection();
+			
+			AllHeaders = headers;
 
 			// Default importancetype is Normal (assumed if not set)
 			Importance = MailPriority.Normal;
